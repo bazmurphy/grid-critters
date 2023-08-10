@@ -1,0 +1,160 @@
+@font-face {
+  font-family: "Fira Code";
+  src: url("./fonts/FiraCode-VF.ttf");
+}
+
+:root {
+  --blue01: #27135b;
+  --blue02: #132468;
+  --purple01: #27135b;
+  --purple02: #190a47;
+  --pink01: #a6368e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Code", sans-serif;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  color: hsl(0, 0%, 90%);
+  background-image: url("images/space-backdrop.jpg");
+  background-size: cover;
+}
+
+header {
+  padding: 0.5rem 0;
+  text-align: center;
+  background-color: hsla(260, 57%, 19%, 0.9);
+  border-bottom: 2px solid #1d20a3;
+  position: sticky;
+  top: 0;
+}
+
+header h1 {
+  font-weight: 400;
+  color: #47ccdf;
+  text-shadow: 0 0 0.4rem #30d4cc;
+}
+
+main {
+  padding: 1rem;
+  /* border: 2px solid yellow; */
+}
+
+.chapter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  /* border: 2px solid red; */
+}
+
+.chapter-container h2 {
+  font-weight: 400;
+  color: #47ccdf;
+  text-shadow: 0 0 0.4rem #30d4cc;
+  transform: rotate(270deg);
+}
+
+.level-container {
+  padding: 1rem;
+  background-color: hsla(0, 0%, 0%, 0.25);
+}
+
+.level-container h3 {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #47ccdf;
+  text-shadow: 0 0 0.4rem #30d4cc;
+}
+
+pre {
+  margin: 0.5rem 0;
+  display: inline-block;
+  background-color: hsl(0, 0%, 10%);
+}
+
+code {
+  color: hsl(80, 70%, 60%);
+  font-family: monospace;
+  font-size: 0.75rem;
+}
+
+.item-one {
+  box-sizing: content-box;
+  border: 1px solid hsl(350, 56%, 27%);
+  background-image: url("images/dunes.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.item-two {
+  box-sizing: content-box;
+  border: 1px solid hsl(75, 73%, 40%);
+  background-image: url("images/rocky.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.item-three {
+  box-sizing: content-box;
+  border: 1px solid hsl(188, 73%, 17%);
+  background-image: url("images/grass.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.planet {
+  margin: 0.5rem 0;
+  min-width: 320px;
+  width: 500px;
+  min-height: 30vh;
+  background-color: #19134f;
+  border: 0.5rem solid #100c33;
+}
+
+.chapter1level3 {
+  display: grid;
+}
+
+.chapter1level4 {
+  display: grid;
+  grid-template-rows: 100px 200px;
+}
+
+.chapter1level5 {
+  display: grid;
+  grid-template-columns: 100px 200px 100px;
+}
+
+.chapter1level6 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.chapter1level7 {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: 1fr 100px;
+}
+
+.chapter1level8 {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+}
+
+.chapter1level9 {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.chapter1level10 {
+  display: grid;
+  grid-template-columns: repeat(3, 50px 100px);
+}
