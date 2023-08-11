@@ -43,21 +43,42 @@ header h1 {
 
 main {
   padding: 1rem;
-  /* border: 2px solid yellow; */
 }
 
 .chapter-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 1rem;
-  /* border: 2px solid red; */
 }
 
-.chapter-container h2 {
+.chapter-details {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: hsla(0, 0%, 0%, 0.3);
+}
+
+.chapter-details h2 {
+  font-size: 1.2rem;
   font-weight: 400;
   color: #47ccdf;
   text-shadow: 0 0 0.4rem #30d4cc;
-  transform: rotate(270deg);
+}
+
+.chapter-details h4 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #47ccdf;
+  text-shadow: 0 0 0.4rem #30d4cc;
+}
+
+.levels-container {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 1rem;
+  overflow-x: scroll;
 }
 
 .level-container {
@@ -74,15 +95,24 @@ main {
 }
 
 pre {
-  margin: 0.5rem 0;
+  padding: 0.5rem;
   display: inline-block;
-  background-color: hsl(0, 0%, 10%);
+  background-color: hsla(0, 0%, 10%, 0.8);
 }
 
 code {
+  display: inline-block;
   color: hsl(80, 70%, 60%);
   font-family: monospace;
   font-size: 0.75rem;
+}
+
+.planet {
+  margin: 0.5rem 0;
+  width: 500px;
+  height: 500px;
+  background-color: hsl(246, 61%, 25%);
+  border: 0.5rem solid hsl(246, 61%, 10%);
 }
 
 .item-one {
@@ -107,15 +137,6 @@ code {
   background-image: url("images/grass.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.planet {
-  margin: 0.5rem 0;
-  min-width: 320px;
-  width: 500px;
-  min-height: 30vh;
-  background-color: #19134f;
-  border: 0.5rem solid #100c33;
 }
 
 .chapter1level3 {
