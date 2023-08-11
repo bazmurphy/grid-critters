@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
     <title>Grid Critters</title>
   </head>
   <body>
@@ -12,13 +13,19 @@
     </header>
     <main>
       <div class="chapter-container">
+        
         <div class="chapter-details">
           <h2>Chapter 1</h2>
           <h4>Concepts</h4>
           <pre><code>display: grid;
 grid-template-columns: X;
 grid-template-rows: X;</code></pre>
+          <div class="chapter-buttons-container">
+            <button class="previous-button">Previous</butto>
+            <button class="next-button">Next</button>
+          </div>
         </div>
+
         <div class="levels-container">
           <div class="level-container">
             <h3>Chapter 1 Level 3</h3>
@@ -296,15 +303,22 @@ grid-template-rows: X;</code></pre>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="chapter-container">
+      <div class="chapter-container">
           <div class="chapter-details">
             <h2>Chapter 2</h2>
             <h4>Concepts</h4>
             <pre><code>column-gap: X;
 row-gap: X;
 gap: X; / grid-gap: X;</code></pre>
+            <div class="chapter-buttons-container">
+              <button class="previous-button">Previous</butto>
+              <button class="next-button">Next</button>
+            </div>
           </div>
+
+          <div class="levels-container">
 
           <div class="level-container">
             <h3>Chapter 2 Level 1</h3>
@@ -604,6 +618,7 @@ gap: X; / grid-gap: X;</code></pre>
           </div>
         </div>
       </div>
+    </div>
     </main>
   </body>
 </html>
