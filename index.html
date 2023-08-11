@@ -13,7 +13,6 @@
     </header>
     <main>
       <div class="chapter-container">
-        
         <div class="chapter-details">
           <h2>Chapter 1</h2>
           <h4>Concepts</h4>
@@ -21,7 +20,7 @@
 grid-template-columns: X;
 grid-template-rows: X;</code></pre>
           <div class="chapter-buttons-container">
-            <button class="previous-button">Previous</butto>
+            <button class="previous-button">Previous</button>
             <button class="next-button">Next</button>
           </div>
         </div>
@@ -306,20 +305,19 @@ grid-template-rows: X;</code></pre>
       </div>
 
       <div class="chapter-container">
-          <div class="chapter-details">
-            <h2>Chapter 2</h2>
-            <h4>Concepts</h4>
-            <pre><code>column-gap: X;
+        <div class="chapter-details">
+          <h2>Chapter 2</h2>
+          <h4>Concepts</h4>
+          <pre><code>column-gap: X;
 row-gap: X;
 gap: X; / grid-gap: X;</code></pre>
-            <div class="chapter-buttons-container">
-              <button class="previous-button">Previous</butto>
-              <button class="next-button">Next</button>
-            </div>
+          <div class="chapter-buttons-container">
+            <button class="previous-button">Previous</button>
+            <button class="next-button">Next</button>
           </div>
+        </div>
 
-          <div class="levels-container">
-
+        <div class="levels-container">
           <div class="level-container">
             <h3>Chapter 2 Level 1</h3>
             <pre><code>planet {
@@ -618,7 +616,125 @@ gap: X; / grid-gap: X;</code></pre>
           </div>
         </div>
       </div>
-    </div>
+      <div class="chapter-container">
+        <div class="chapter-details">
+          <h2>Chapter 3</h2>
+          <h4>Concepts</h4>
+          <pre><code></code></pre>
+          <div class="chapter-buttons-container">
+            <button class="previous-button">Previous</button>
+            <button class="next-button">Next</button>
+          </div>
+        </div>
+
+        <div class="levels-container">
+          <div class="level-container">
+            <h3>Chapter 3 Level 3</h3>
+            <pre><code>planet {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+rocky {
+  grid-row-start: 3;
+}</code></pre>
+            <div class="planet chapter3level3">
+              <div class="grass"></div>
+              <div class="rocky"></div>
+            </div>
+          </div>
+
+          <div class="level-container">
+            <h3>Chapter 3 Level 4</h3>
+            <pre><code>planet {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+grass {
+  grid-column-start: 3; 
+}</code></pre>
+            <div class="planet chapter3level4">
+              <div class="grass"></div>
+            </div>
+          </div>
+
+          <div class="level-container">
+            <h3>Chapter 3 Level 4</h3>
+            <pre><code>planet {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+grass {
+  grid-column-start: 3; 
+}</code></pre>
+            <div class="planet chapter3level5">
+              <div class="grass"></div>
+            </div>
+          </div>
+
+          <div class="level-container">
+            <h3>Chapter 3 Level 6</h3>
+            <pre><code>planet {
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr 100px;
+  grid-template-rows: 200px 1fr 1fr 100px;
+}
+
+rocky {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}</code></pre>
+            <div class="planet chapter3level6">
+              <div class="rocky"></div>
+            </div>
+          </div>
+
+          <div class="level-container">
+            <h3>Chapter 3 Level 7</h3>
+            <pre><code>planet {
+  display: grid;
+  grid-template-columns: 15% 1fr 1fr 15%;
+  grid-template-rows: 15% 1fr 1fr 15%;
+}
+
+grass {
+  grid-column-start: 1;
+  grid-colun-end: -1;
+  grid-row-end: -2;
+}</code></pre>
+            <div class="planet chapter3level7">
+              <div class="grass"></div>
+              <div></div>
+            </div>
+          </div>
+
+          <div class="level-container">
+            <h3>Chapter 3 Level 8</h3>
+            <pre><code>planet {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+dunes {
+  grid-row-end: span 3;
+}
+
+grass {
+  grid-row-start: 2;
+}</code></pre>
+            <div class="planet chapter3level8">
+              <div class="rocky"></div>
+              <div class="grass"></div>
+              <div class="dunes"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>
