@@ -549,8 +549,232 @@ rocky {
     {
       chapter: 3,
       level: 11,
-      blocks: [],
-      css: ``,
+      blocks: ["dunes", "rocky"],
+      css: `planet {
+  display: grid;
+  grid-template-columns: [start] 1fr 1fr [center] 1fr 1fr [end];
+  grid-template-rows: [top] 1fr 1fr [bottom];
+}
+
+dunes {
+  grid-row-start: 2;
+  grid-column-start: center;
+  grid-column-end: end;
+}
+
+rocky {
+  grid-row: top / bottom;
+  grid-column: start / center;
+}`,
+    },
+    {
+      chapter: 3,
+      level: 12,
+      blocks: ["dunes"],
+      css: `planet {
+  display: grid;
+  grid-template-columns: 1fr [middle center] 1fr;
+  grid-template-rows: 1fr [neat-line awesome-line] 1fr;
+}
+
+dunes {
+  grid-column: center;
+  grid-row: awesome-line;
+}`,
+    },
+    {
+      chapter: 3,
+      level: 13,
+      blocks: ["grass"],
+      css: `planet {
+  display: grid;
+  grid-template-columns: 1fr repeat(5, [grass] 50px) [grass] 1fr;
+  grid-template-rows: 1fr;
+}
+
+grass {
+  grid-column: grass 2 / grass 5;
+}`,
+    },
+    {
+      chapter: 3,
+      level: 15,
+      blocks: ["rocky"],
+      css: `planet {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+rocky {
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+}`,
+    },
+    {
+      chapter: 3,
+      level: 16,
+      blocks: ["dunes", "grass"],
+      css: `planet {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+}
+
+dunes {
+  grid-row: 3 / 6;
+}`,
+    },
+    {
+      chapter: 3,
+      level: 17,
+      blocks: ["dunes", "rocky"],
+      css: `planet {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-column-gap: 20vw;
+  grid-row-gap: 20px;
+}
+
+dunes {
+  grid-column:2 / 3;
+}
+
+rocky {
+  grid-row: 2 / 4;
+}`,
+    },
+    {
+      chapter: 3,
+      level: 18,
+      blocks: ["rocky", "grass", "grass", "rocky"],
+      css: `planet {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+rocky {
+  grid-column-start: span 2;
+  grid-row-end: span 4;
+}
+
+grass {
+  grid-row-end: span 2;
+}`,
+    },
+    {
+      chapter: 3,
+      level: 19,
+      blocks: ["grass"],
+      css: `planet {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 5%;
+}
+
+grass {
+  grid-column-start: 2;
+  grid-column-end: -1;
+}`,
+    },
+    {
+      chapter: 3,
+      level: 20,
+      blocks: ["rocky", "dunes", "grass"],
+      css: `planet {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 50px;
+}
+
+dunes {
+  grid-column: 1 / 7;
+  grid-row: 2 / 3;
+}
+
+grass {
+  grid-column: span 3;
+}
+
+rocky {
+  grid-column: span 3;
+}`,
+    },
+    {
+      chapter: 3,
+      level: 21,
+      blocks: ["rocky", "dunes"],
+      css: `planet {
+  display: grid;
+  grid-template-columns: [left] 15% 1fr 15% [right];
+  grid-template-rows: [top] 15% 1fr 15% [bottom];
+}
+
+rocky {
+  grid-column: 1 / right;
+  grid-row: -2 / bottom;
+}
+
+dunes {
+  grid-column: left / 2;
+  grid-row: top / bottom;
+}`,
+    },
+    {
+      chapter: 3,
+      level: 22,
+      blocks: ["dunes", "rocky", "dunes", "rocky"],
+      css: `planet {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr repeat(5, [dunes] 50px) [dunes];
+  column-gap: 5%;
+}
+
+dunes {
+  grid-row-start: dunes 3;
+  grid-row-end: dunes 6;
+}`,
+    },
+    {
+      chapter: 3,
+      level: 23,
+      blocks: ["dunes", "grass", "rocky"],
+      css: `planet {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 10vw;
+}
+
+grass {
+  grid-column: 2;
+  grid-row: span 2;
+}
+
+rocky {
+  grid-row: 2;
+  grid-column: 3;
+}`,
+    },
+    {
+      chapter: 3,
+      level: 24,
+      blocks: ["dunes"],
+      css: `planet {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 20px;
+  row-gap: 140px;
+}
+
+dunes {
+  grid-row-start: 2;
+  grid-column-start: 2;
+}`,
     },
   ],
 ];
