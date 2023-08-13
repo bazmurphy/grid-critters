@@ -1,6 +1,11 @@
 @font-face {
-  font-family: "Fira Code";
-  src: url("./fonts/FiraCode-VF.ttf");
+  font-family: "Audiowide";
+  src: url("./fonts/Audiowide.woff2");
+}
+
+@font-face {
+  font-family: "Cascadia Code";
+  src: url("./fonts/CascadiaCode.woff2");
 }
 
 :root {
@@ -15,7 +20,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Fira Code", sans-serif;
+  font-family: "Audiowide", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -31,14 +39,19 @@ body {
 header {
   padding: 0.5rem 0;
   text-align: center;
-  background-color: hsla(260, 57%, 19%, 0.85);
+  background: linear-gradient(
+    to right,
+    hsla(260, 57%, 10%, 0.85),
+    hsla(260, 57%, 25%, 0.85),
+    hsla(260, 57%, 10%, 0.85)
+  );
   border-bottom: 2px solid #1d20a3;
   position: sticky;
   top: 0;
 }
 
 header h1 {
-  font-weight: 400;
+  font-weight: 500;
   color: #47ccdf;
   text-shadow: 0 0 0.4rem #30d4cc;
 }
@@ -47,7 +60,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 4rem;
   padding: 1rem;
 }
 
@@ -55,12 +68,13 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  border-radius: 0.5rem;
 }
 
 .chapter-details {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.5rem;
   padding: 1rem;
   background-color: hsla(0, 0%, 0%, 0.4);
@@ -69,11 +83,11 @@ main {
 }
 
 .chapter-details h2 {
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-size: 1.5rem;
+  font-weight: 500;
   color: #47ccdf;
   text-shadow: 0 0 0.4rem #30d4cc;
-  border-bottom: 0.1rem solid #6b1d5d;
+  /* border-bottom: 0.1rem solid #6b1d5d; */
 }
 
 .chapter-details h4 {
@@ -107,23 +121,20 @@ main {
 .levels-container {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   gap: 1rem;
-  /* max-width: 540px; */
-  /* transition: transform 0.2s ease-in-out; */
 }
 
 .level-container {
-  /* flex: 0 0 100%; */
-  /* min-width: 100%; */
   padding: 1rem;
   background-color: hsla(0, 0%, 0%, 0.4);
-  box-shadow: 0 0 0.2rem #30d4cc;
+  box-shadow: 0 0 0.2rem #0d68ab;
   border-radius: 0.5rem;
 }
 
 .level-container h3 {
   margin: 0.5rem 0;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 500;
   color: #47ccdf;
   text-shadow: 0 0 0.4rem #30d4cc;
@@ -133,15 +144,16 @@ main {
 pre {
   padding: 0.5rem;
   display: inline-block;
-  background-color: hsla(0, 0%, 5%, 0.8);
+  background-color: hsla(0, 0%, 10%, 0.7);
   border-radius: 0.5rem;
 }
 
 code {
   display: inline-block;
-  color: hsl(80, 70%, 60%);
-  font-family: monospace;
-  font-size: 0.75rem;
+  color: hsl(150, 100%, 60%);
+  font-family: "Cascadia Code", monospace;
+  line-height: 1.5;
+  font-size: 0.9rem;
 }
 
 .planet {
@@ -157,8 +169,9 @@ code {
   background-image: url("images/dunes.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  border-width: 0 0 1rem 0;
+  border-width: 1px 1px 1rem 1px;
   border-style: solid;
+  border-color: black;
   border-image: url("images/dunes-border.jpg") 0 0 100% 0;
 }
 
@@ -168,8 +181,9 @@ code {
   background-image: url("images/rocky.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  border-width: 0 0 1rem 0;
+  border-width: 1px 1px 1rem 1px;
   border-style: solid;
+  border-color: black;
   border-image: url("images/rocky-border.jpg") 0 0 100% 0;
 }
 
@@ -179,297 +193,8 @@ code {
   background-image: url("images/grass.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  border-width: 0 0 1rem 0;
+  border-width: 1px 1px 1rem 1px;
   border-style: solid;
+  border-color: black;
   border-image: url("images/grass-border.jpg") 0 0 100% 0;
-}
-
-.chapter1level3 {
-  display: grid;
-}
-
-.chapter1level4 {
-  display: grid;
-  grid-template-rows: 100px 200px;
-}
-
-.chapter1level5 {
-  display: grid;
-  grid-template-columns: 100px 200px 100px;
-}
-
-.chapter1level6 {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-}
-
-.chapter1level7 {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  grid-template-rows: 1fr 100px;
-}
-
-.chapter1level8 {
-  display: grid;
-  grid-template-columns: repeat(4, 100px);
-  grid-template-rows: repeat(4, 100px);
-}
-
-.chapter1level9 {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-}
-
-.chapter1level10 {
-  display: grid;
-  grid-template-columns: repeat(3, 50px 100px);
-}
-
-.chapter1level12 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
-}
-
-.chapter1level13 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 2fr 1fr;
-}
-
-.chapter1level14 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 20% 1fr 20%;
-}
-
-.chapter1level15 {
-  display: grid;
-  grid-template-columns: 1fr 20vw;
-  grid-template-rows: repeat(5, 1fr);
-}
-
-.chapter1level16 {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 25% 25% 50%;
-}
-
-.chapter1level17 {
-  display: grid;
-  grid-template-columns: 1fr 100px 1fr;
-  grid-template-rows: 1fr 100px 1fr;
-}
-
-.chapter1level18 {
-  display: grid;
-  grid-template-columns: 2fr 10% 1fr;
-  grid-template-rows: 200px 1fr;
-}
-
-.chapter1level19 {
-  display: grid;
-  grid-template-columns: 25% 25%;
-  grid-template-rows: 1fr 1fr 50px;
-}
-
-.chapter1level20 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, 50px 1fr);
-}
-
-.chapter1level21 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
-}
-
-.chapter2level1 {
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  row-gap: 50px;
-}
-
-.chapter2level2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 100px;
-}
-
-.chapter2level3 {
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  row-gap: 50px;
-}
-
-.chapter2level4 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 100px;
-}
-
-.chapter2level5 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  column-gap: 100px;
-  row-gap: 100px;
-}
-
-.chapter2level6 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  column-gap: 50px;
-  row-gap: 200px;
-}
-
-.chapter2level7 {
-  display: grid;
-  grid-template-columns: repeat(2, 75px) 1fr;
-  column-gap: 30px;
-}
-
-.chapter2level8 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-gap: 5vh 10%;
-}
-
-.chapter2level9 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 100px;
-}
-
-.chapter2level11 {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr 2fr 1fr;
-  grid-gap: 50px;
-}
-
-.chapter2level12 {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 50px;
-}
-
-.chapter2level13 {
-  display: grid;
-  grid-template-columns: repeat(2, 200px);
-  grid-template-rows: repeat(2, 200px);
-  grid-gap: 10%;
-}
-
-.chapter2level14 {
-  display: grid;
-  grid-template-rows: 200px repeat(4, 1fr);
-  row-gap: 10px;
-}
-
-.chapter2level15 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 300px 1fr;
-  grid-column-gap: 5%;
-  grid-row-gap: 10%;
-}
-
-.chapter2level16 {
-  display: grid;
-  grid-template-columns: 1fr 100px 1fr;
-  grid-template-rows: 1fr 1fr;
-  column-gap: 5vw;
-}
-
-.chapter2level17 {
-  display: grid;
-  grid-template-columns: 1fr 3fr 200px;
-  grid-template-rows: repeat(4, 1fr);
-  column-gap: 20px;
-}
-
-.chapter2level18 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 50% 1fr;
-  column-gap: 200px;
-}
-
-.chapter2level19 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 70%;
-}
-
-.chapter3level3 {
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-}
-
-.chapter3level3 .rocky {
-  grid-row-start: 3;
-}
-
-.chapter3level4 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.chapter3level4 .grass {
-  grid-column-start: 3;
-}
-
-.chapter3level5 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-}
-
-.chapter3level5 .grass {
-  grid-column-start: 2;
-  grid-row-start: 3;
-}
-
-.chapter3level6 {
-  display: grid;
-  grid-template-columns: 200px 1fr 1fr 100px;
-  grid-template-rows: 200px 1fr 1fr 100px;
-}
-
-.chapter3level6 .rocky {
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 2;
-  grid-row-end: 4;
-}
-
-.chapter3level7 {
-  display: grid;
-  grid-template-columns: 15% 1fr 1fr 15%;
-  grid-template-rows: 15% 1fr 1fr 15%;
-}
-
-.chapter3level7 .grass {
-  grid-column-start: 1;
-  grid-column-end: -1;
-  grid-row-end: -2;
-}
-
-.chapter3level8 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-}
-
-.chapter3level8 .dunes {
-  grid-row-end: span 3;
-}
-
-.chapter3level8 .grass {
-  grid-row-start: 2;
 }
