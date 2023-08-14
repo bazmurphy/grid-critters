@@ -51,6 +51,7 @@ header {
 }
 
 header h1 {
+  font-size: 2.2rem;
   font-weight: 500;
   color: #47ccdf;
   text-shadow: 0 0 0.4rem #30d4cc;
@@ -59,21 +60,21 @@ header h1 {
 main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  padding: 0 1rem;
 }
 
 .chapter-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-top: 1rem;
   border-radius: 0.5rem;
-  margin-top: 2rem;
 }
 
 .chapter-details {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 0.5rem;
   padding: 1rem;
   background-color: hsla(0, 0%, 0%, 0.4);
@@ -82,7 +83,7 @@ main {
 }
 
 .chapter-details h2 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 500;
   color: #47ccdf;
   text-shadow: 0 0 0.4rem #30d4cc;
@@ -120,7 +121,7 @@ main {
 .levels-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: flex-start;
   gap: 1rem;
 }
 
@@ -133,7 +134,7 @@ main {
 
 .level-container h3 {
   margin: 0.5rem 0;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 500;
   color: #47ccdf;
   text-shadow: 0 0 0.4rem #30d4cc;
@@ -155,12 +156,17 @@ code {
   font-size: 0.9rem;
 }
 
-.planet {
-  margin: 0.5rem 0;
+.planet-container {
   width: 500px;
   height: 500px;
+  margin: 0.5rem 0;
   background-color: hsl(246, 61%, 20%);
   border: 0.5rem solid hsl(246, 61%, 10%);
+}
+
+.planet {
+  width: 100%;
+  height: 100%;
 }
 
 .dunes {
@@ -176,7 +182,6 @@ code {
 
 .rocky {
   box-sizing: content-box;
-  border: 1px solid hsl(75, 73%, 40%);
   background-image: url("images/rocky.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -188,7 +193,6 @@ code {
 
 .grass {
   box-sizing: content-box;
-  border: 1px solid hsl(188, 73%, 17%);
   background-image: url("images/grass.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -196,4 +200,15 @@ code {
   border-style: solid;
   border-color: black;
   border-image: url("images/grass-border.jpg") 0 0 100% 0;
+}
+
+.water {
+  box-sizing: content-box;
+  background-image: url("images/water.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-width: 1px 1px 1rem 1px;
+  border-style: solid;
+  border-color: black;
+  border-image: url("images/water-border.jpg") 0 0 100% 0;
 }

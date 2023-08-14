@@ -94,10 +94,18 @@ chapters.forEach((chapter, index) => {
     codeBlock.textContent = level.css;
     preBlock.appendChild(codeBlock);
 
-    // <div class="planet"></div>
+    // <div class="planet-container">
+    //   <div class="planet"></div>
+    // </div>
+
+    const planetContainer = document.createElement("div");
+    planetContainer.className = "planet-container";
+
     const planet = document.createElement("div");
     planet.className = "planet";
     planet.style = parsedRules.planet;
+
+    planetContainer.appendChild(planet);
 
     // <div class="dunes"></div>
     // <div class="rocky"></div>
@@ -113,7 +121,7 @@ chapters.forEach((chapter, index) => {
 
     levelContainer.appendChild(levelHeading);
     levelContainer.appendChild(preBlock);
-    levelContainer.appendChild(planet);
+    levelContainer.appendChild(planetContainer);
 
     levelsContainer.appendChild(levelContainer);
   });
