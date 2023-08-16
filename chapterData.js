@@ -1964,7 +1964,7 @@ rocky {
       },
       {
         chapter: 6,
-        level: 0,
+        level: 20,
         blocks: [
           "rocky",
           "water",
