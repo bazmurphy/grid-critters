@@ -1,7 +1,7 @@
 const chapterData = [
   {
     chapter: 1,
-    concepts: "display: grid, grid-template-columns, & grid-template-rows",
+    concepts: "grid, grid-template-columns, grid-template-rows",
     conceptsCode: `display: grid; 
 grid-template-columns: X; 
 grid-template-rows: X;`,
@@ -1568,6 +1568,426 @@ dunes {
 
 dunes {
   grid-row: span 2;
+}`,
+      },
+    ],
+  },
+  {
+    chapter: 6,
+    concepts: "grid-template, grid-auto-flow, sparse vs dense, order",
+    conceptsCode: `grid-template: X (rows) / X (columns);
+order: X;
+grid-auto-flow: row (default) / column sparse (default) / dense;`,
+    levelData: [
+      {
+        chapter: 6,
+        level: 3,
+        blocks: ["water", "dunes", "water", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template: 1fr 20% / 1fr 1fr 1fr 1fr;
+  grid-column-gap: 10%;
+}`,
+      },
+      {
+        chapter: 6,
+        level: 4,
+        blocks: ["rocky", "water", "water", "water", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-gap: 5%;
+  grid-template: 
+    ". rocky rocky ." 200px 
+    ". rocky rocky ." 1fr 
+    / 1fr 1fr 1fr 1fr;
+}
+
+rocky {
+  grid-area: rocky;
+}`,
+      },
+      {
+        chapter: 6,
+        level: 5,
+        blocks: ["water", "dunes", "water", "water", "water", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template: 
+    1fr
+    1fr
+    / 1fr 1fr 1fr 1fr;
+}
+
+dunes {
+  grid-column: 4;
+}`,
+      },
+      {
+        chapter: 6,
+        level: 6,
+        blocks: ["water", "rocky", "water", "water", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template: 
+    1fr
+    1fr
+    1fr
+    / 1fr 1fr 1fr;
+  grid-gap: 50px;
+}
+
+rocky {
+  grid-column: 1;
+}`,
+      },
+      {
+        chapter: 6,
+        level: 7,
+        blocks: [
+          "water",
+          "rocky",
+          "water",
+          "water",
+          "water",
+          "water",
+          "rocky",
+          "water",
+          "water",
+        ],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template:
+    1fr
+    100px
+    100px
+    1fr
+    / 1fr 100px 100px 1fr;
+}
+
+rocky {
+  grid-row: span 3;
+}`,
+      },
+      {
+        chapter: 6,
+        level: 8,
+        blocks: ["water", "dunes", "water", "water", "water", "water", "dunes"],
+        blocksContent: [],
+        css: `/* ROW POSITIONING gives the cell a FAST PASS in POSITIONING */
+/* those cells are placed first */
+/* and then the fill process starts from the beginning */
+/* remember: grid-area IS row positioning */
+
+planet {
+  display: grid;
+  grid-template:
+    1fr
+    100px
+    100px
+    1fr
+    / 1fr 200px 1fr;
+}
+
+dunes {
+  grid-area: 2;
+}`,
+      },
+      {
+        chapter: 6,
+        level: 9,
+        blocks: ["water", "water", "rocky", "water", "water", "dunes"],
+        blocksContent: [],
+        css: `/* row-positioned items are still given first place priority */
+/* regardless of the order values */
+
+planet {
+  display: grid;
+  grid-template: 
+    1fr
+    25%
+    1fr
+    / 1fr 25% 1fr; 
+}
+
+rocky {
+  order: 1;
+}
+
+dunes {
+  order: -1;
+}`,
+      },
+      {
+        chapter: 6,
+        level: 10,
+        blocks: [
+          "water",
+          "water",
+          "water",
+          "water",
+          "dunes",
+          "water",
+          "water",
+          "water",
+          "water",
+          "water",
+        ],
+        blocksContent: [],
+        css: `/* fill up the grid with columns instead of rows (default) */
+/* and then column placement has fast pass priority */
+
+planet {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 50px;
+  grid-auto-flow: column;
+}
+
+dunes {
+  /* grid-column: 1; */     
+}`,
+      },
+      {
+        chapter: 6,
+        level: 11,
+        blocks: [
+          "water",
+          "water",
+          "dunes",
+          "water",
+          "water",
+          "rocky",
+          "water",
+          "water",
+        ],
+        blocksContent: [],
+        css: `/* if the grid goes back to previous empty cells or not */
+/* grid-auto-flow: row (default) / column sparse (default) / dense */
+
+planet {
+  display: grid;
+  grid-template: 100px
+                 1fr
+                 1fr
+                 100px
+                 / 100px 1fr 1fr 1fr 100px;
+  grid-gap: 5%;
+  grid-auto-flow: dense;
+}
+
+rocky {
+  grid-row: span 3;
+  grid-column: 4;
+}
+
+dunes {
+  grid-row: span 3;
+  grid-column: 2;
+}`,
+      },
+      {
+        chapter: 6,
+        level: 13,
+        blocks: ["dunes", "rocky", "water", "rocky", "water"],
+        blocksContent: ["ABcccccBA"],
+        css: `planet {
+  display: grid;
+  grid-template-columns: minmax(25%, 1fr) 1fr;
+  grid-template-rows: auto repeat(3, 1fr);
+  column-gap: 10%;
+  row-gap: 50px;
+  grid-auto-flow: dense;
+}
+
+dunes {
+  grid-column-start: 2;
+}
+
+rocky {
+  grid-row: span 2;
+}`,
+      },
+      {
+        chapter: 6,
+        level: 14,
+        blocks: ["rocky", "water", "water", "dunes", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template:
+    1fr
+    minmax(25vh, 1fr)
+    100px
+    / 1fr 10%;
+}
+
+dunes {
+  grid-column: 2;
+}
+
+rocky {
+  order: 1;
+}`,
+      },
+      {
+        chapter: 6,
+        level: 15,
+        blocks: [
+          "water",
+          "rocky",
+          "water",
+          "rocky",
+          "water",
+          "water",
+          "water",
+          "water",
+        ],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-template-rows: 1fr 100px 1fr 100px 1fr;
+  gap: 25px;
+  grid-auto-flow: column dense;
+}
+
+rocky {
+  grid-row: span 2;
+  grid-column: span 2;
+}`,
+      },
+      {
+        chapter: 6,
+        level: 16,
+        blocks: ["water", "water", "dunes", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  grid-auto-flow: dense;
+}
+
+water {
+  grid-column: span 2;
+}`,
+      },
+      {
+        chapter: 6,
+        level: 17,
+        blocks: [
+          "water",
+          "water",
+          "dunes",
+          "water",
+          "water",
+          "rocky",
+          "water",
+          "water",
+          "water",
+          "water",
+          "water",
+        ],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 30% 20% 20% 30%;
+  grid-auto-flow: column;
+}
+
+dunes {
+  grid-column: span 4;
+}`,
+      },
+      {
+        chapter: 6,
+        level: 18,
+        blocks: ["water", "rocky", "dunes", "water", "water", "water", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-gap: 50px;
+  grid-template:
+    ". rocky rocky ." 1fr
+    ". . dunes ." 1fr
+    ". . dunes ." 1fr
+    ". . dunes ." 1fr
+    / 1fr 1fr 1fr 1fr;
+}
+
+rocky {
+  grid-area: rocky;
+}
+
+water {
+  grid-row: span 2;
+}
+
+dunes {
+  grid-area: dunes;
+}`,
+      },
+      {
+        chapter: 6,
+        level: 19,
+        blocks: ["dunes", "rocky", "grass", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 100px;
+}
+
+grass {
+  order: 1;
+}
+
+water {
+  order: 4;
+}
+
+dunes {
+  order: 2;
+}
+
+rocky {
+  order: 3;
+}`,
+      },
+      {
+        chapter: 6,
+        level: 0,
+        blocks: [
+          "rocky",
+          "water",
+          "water",
+          "water",
+          "water",
+          "water",
+          "water",
+          "water",
+          "water",
+          "water",
+          "water",
+        ],
+        blocksContent: ["ABABAB AB ABABAB"],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 1fr minmax(50px, auto) 100px;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+rocky {
+  grid-row: 2 / 4;
+  grid-column: 2;
 }`,
       },
     ],

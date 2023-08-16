@@ -158,6 +158,19 @@ chapterData.forEach((chapter) => {
     levelPreBlock.appendChild(levelCodeBlock);
     levelContainer.appendChild(levelPreBlock);
 
+    const terrainOrderContainer = document.createElement("div");
+    terrainOrderContainer.className = "terrain-order-container";
+    const terrainOrderCells = document.createElement("p");
+    terrainOrderCells.textContent = "Order:";
+    terrainOrderContainer.appendChild(terrainOrderCells);
+    level.blocks.forEach((block) => {
+      const terrainSmall = document.createElement("div");
+      terrainSmall.className = `terrain-small ${block}-small`;
+      terrainOrderContainer.appendChild(terrainSmall);
+    });
+
+    levelContainer.appendChild(terrainOrderContainer);
+
     // <div class="planet-container">
     //   <div class="planet"></div>
     // </div>
