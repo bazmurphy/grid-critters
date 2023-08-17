@@ -6,10 +6,19 @@ const header = document.createElement("header");
 
 const headerHeading = document.createElement("h1");
 headerHeading.id = "header-heading";
+
 const headerHeadingLink = document.createElement("a");
 headerHeadingLink.id = "header-heading-link";
 headerHeadingLink.textContent = "Grid Critters";
 headerHeadingLink.href = "#";
+headerHeadingLink.addEventListener("click", (event) => {
+  event.preventDefault();
+  window.scrollTo({
+    top: top,
+    behavior: "smooth",
+  });
+});
+
 headerHeading.appendChild(headerHeadingLink);
 
 const headerNavigation = document.createElement("nav");
@@ -127,21 +136,6 @@ chapterData.forEach((chapter) => {
   levelsContainer.className = "levels-container";
 
   chapter.levelData.forEach((level) => {
-    // split the CSS string into individual lines
-    const cssRules = level.css.split(/\n\n/);
-    // create an empty object to store each of the parsed rules
-    const parsedRules = {};
-    // iterate through each rule and parse selector and properties
-    cssRules.forEach((rule) => {
-      const [selector, properties] = rule.split("{");
-      if (selector && properties) {
-        const selectorName = selector.trim();
-        const ruleString = properties.replace(/\s+/g, " ").slice(0, -1).trim();
-        parsedRules[selectorName] = ruleString;
-      }
-    });
-    // console.log(parsedRules);
-
     // <div class="level-container"></div>
     const levelContainer = document.createElement("div");
     levelContainer.className = "level-container";
@@ -171,6 +165,21 @@ chapterData.forEach((chapter) => {
 
     levelContainer.appendChild(terrainOrderContainer);
 
+    // split the CSS string into individual lines
+    const cssRules = level.css.split(/\n\n/);
+    // create an empty object to store each of the parsed rules
+    const parsedCssRules = {};
+    // iterate through each rule and parse selector and properties
+    cssRules.forEach((rule) => {
+      const [selector, properties] = rule.split("{");
+      if (selector && properties) {
+        const selectorName = selector.trim();
+        const ruleString = properties.replace(/\s+/g, " ").slice(0, -1).trim();
+        parsedCssRules[selectorName] = ruleString;
+      }
+    });
+    // console.log(parsedCssRules);
+
     // <div class="planet-container">
     //   <div class="planet"></div>
     // </div>
@@ -179,7 +188,8 @@ chapterData.forEach((chapter) => {
 
     const planet = document.createElement("div");
     planet.className = "planet";
-    planet.style = parsedRules.planet;
+
+    planet.style = parsedCssRules.planet;
 
     // <div class="dunes"></div>
     // <div class="rocky"></div>
@@ -188,8 +198,19 @@ chapterData.forEach((chapter) => {
       const terrain = document.createElement("div");
       terrain.className = `terrain ${block}`;
 
-      if (parsedRules[block]) {
-        terrain.style = parsedRules[block];
+      let style = "";
+
+      if (parsedCssRules[block]) {
+        style += parsedCssRules[block];
+      }
+
+      if (parsedCssRules["terrain"]) {
+        console.log(parsedCssRules["terrain"]);
+        style += parsedCssRules["terrain"];
+      }
+
+      if (style.length > 0) {
+        terrain.style = style;
       }
 
       if (level.blocksContent && level.blocksContent.length > 0) {

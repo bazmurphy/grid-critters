@@ -1576,8 +1576,8 @@ dunes {
     chapter: 6,
     concepts: "grid-template, grid-auto-flow, sparse vs dense, order",
     conceptsCode: `grid-template: X (rows) / X (columns);
-order: X;
-grid-auto-flow: row (default) / column sparse (default) / dense;`,
+grid-auto-flow: row (default) / column sparse (default) / dense;
+order: X;`,
     levelData: [
       {
         chapter: 6,
@@ -1988,6 +1988,254 @@ rocky {
 rocky {
   grid-row: 2 / 4;
   grid-column: 2;
+}`,
+      },
+    ],
+  },
+  {
+    chapter: 7,
+    concepts: "implicit tracks, grid-auto-columns, grid-auto-rows",
+    conceptsCode: `grid-auto-columns: X;
+grid-auto-rows: X;`,
+    levelData: [
+      {
+        chapter: 7,
+        level: 3,
+        blocks: ["rocky"],
+        blocksContent: [],
+        css: `/* the grid will implicitly make extra tracks */
+
+planet {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+rocky {
+  grid-column: 3;
+  grid-row: 3;
+}`,
+      },
+      {
+        chapter: 7,
+        level: 4,
+        blocks: ["water", "water", "water", "water", "dunes", "dunes"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 10vh;
+  row-gap: 10vw;
+}`,
+      },
+      {
+        chapter: 7,
+        level: 5,
+        blocks: ["water", "water", "dunes"],
+        blocksContent: ["", "", "AAAA"],
+        css: `/* implicit tracks are auto size by default */
+
+planet {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+dunes {
+  grid-column: 3;
+}`,
+      },
+      {
+        chapter: 7,
+        level: 6,
+        blocks: ["rocky"],
+        blocksContent: [],
+        css: `/* grid-auto-columns specifies the width of auto created columns */
+
+planet {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-columns: 100px;
+}
+
+rocky {
+  grid-column-end: 7;
+}`,
+      },
+      {
+        chapter: 7,
+        level: 7,
+        blocks: [
+          "water",
+          "water",
+          "water",
+          "dunes",
+          "rocky",
+          "grass",
+          "dunes",
+          "water",
+        ],
+        blocksContent: [],
+        css: `/* grid-auto-rows specifies the height of auto created rows */
+
+planet {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 5%;
+  grid-row-gap: 5%;
+  grid-auto-rows: 1fr;
+}`,
+      },
+      {
+        chapter: 7,
+        level: 9,
+        blocks: ["dunes", "grass", "grass", "rocky"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 50px;
+  grid-auto-rows: 50%;
+}`,
+      },
+      {
+        chapter: 7,
+        level: 10,
+        blocks: ["dunes", "grass"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-columns: 100px;
+  grid-auto-rows: 100px;
+}
+
+grass {
+  grid-column: 3;
+  grid-row: 4;
+}`,
+      },
+      {
+        chapter: 7,
+        level: 11,
+        blocks: [
+          "rocky",
+          "dunes",
+          "grass",
+          "grass",
+          "grass",
+          "dunes",
+          "dunes",
+          "dunes",
+          "dunes",
+          "rocky",
+        ],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 100px;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+}
+
+rocky {
+  grid-column: 6;
+}`,
+      },
+      {
+        chapter: 7,
+        level: 12,
+        blocks: ["water", "water", "rocky", "dunes"],
+        blocksContent: ["", "", "ABC", "ABC"],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-columns: minmax(50px, auto);
+  column-gap: 10%;
+  row-gap: 40px;
+}
+
+dunes {
+  grid-column: 3;
+}`,
+      },
+      {
+        chapter: 7,
+        level: 13,
+        blocks: ["dunes", "grass"],
+        blocksContent: [],
+        css: `/* tracks created by repeat() are explicit */
+/* so grid-auto-columns / grid-auto-rows doesn't do anything */
+/* auto-fill / auto-fit create explicit tracks */
+/* grid-auto-columns / grid-auto-rows control implicit track size */
+
+planet {
+  display: grid;
+  grid-row-gap: 5%;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fit, 100px);
+}`,
+      },
+      {
+        chapter: 7,
+        level: 14,
+        blocks: [
+          "water",
+          "water",
+          "water",
+          "water",
+          "water",
+          "rocky",
+          "water",
+          "water",
+        ],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-columns: 0.5fr;
+  grid-auto-flow: row dense;
+  column-gap: 50px;
+  row-gap: 50px;
+}
+
+rocky {
+  grid-column: span 6;
+}`,
+      },
+      {
+        chapter: 7,
+        level: 15,
+        blocks: [
+          "dunes",
+          "dunes",
+          "dunes",
+          "dunes",
+          "dunes",
+          "dunes",
+          "dunes",
+          "dunes",
+        ],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: repeat(4, 50px);
+  grid-auto-rows: 50px;
+  column-gap: 5%;
+  row-gap: 25px;
+}
+
+dunes {
+  grid-row: span 2;
 }`,
       },
     ],

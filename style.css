@@ -278,11 +278,12 @@ code {
 }
 
 .terrain {
-  padding: 5px;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
   border: 1px solid black;
   background-position: center bottom, center top;
   background-repeat: repeat-x, no-repeat;
-  background-size: auto 20px, cover;
+  background-size: auto 10px, cover;
   font-size: 2rem;
   font-family: sans-serif;
   overflow-wrap: break-word;
