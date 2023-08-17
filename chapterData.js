@@ -1413,7 +1413,6 @@ water {
         chapter: 5,
         level: 9,
         blocks: ["dunes"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(auto-fill, 250px);
@@ -1425,9 +1424,8 @@ water {
         level: 10,
         blocks: ["water", "grass", "dunes"],
         blocksContent: ["A", "B"],
-        css: `/* AUTO-FIT and AUTO-FILL TAKE GAPS INTO ACCOUNT */
-
-planet {
+        notes: "AUTO-FIT and AUTO-FILL TAKE GAPS INTO ACCOUNT",
+        css: `planet {
   display: grid;
   grid-template-columns: repeat(auto-fit, 10%);
   grid-template-rows: 1fr;
@@ -1438,7 +1436,6 @@ planet {
         chapter: 5,
         level: 12,
         blocks: ["grass", "dunes", "grass", "dunes", "grass", "dunes"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -1451,10 +1448,8 @@ planet {
         chapter: 5,
         level: 13,
         blocks: ["rocky", "dunes", "dunes", "grass"],
-        blocksContent: [],
-        css: `/* with MINMAX SIZING takes PRIORTITY over FR */
-
-planet {
+        notes: "with MINMAX SIZING takes PRIORTITY over FR",
+        css: `planet {
   display: grid;
   grid-template-columns: minmax(50%, 1fr) repeat(3, 1fr);
   grid-template-rows: 1fr minmax(10%, 1fr);
@@ -1485,7 +1480,6 @@ water {
         chapter: 5,
         level: 15,
         blocks: ["rocky", "grass"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(auto-fill, 10vw);
@@ -1518,7 +1512,6 @@ water {
         chapter: 5,
         level: 17,
         blocks: ["dunes", "rocky", "water", "water", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1560,7 +1553,6 @@ dunes {
         chapter: 5,
         level: 19,
         blocks: ["water", "dunes", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(auto-fit, 25%);
@@ -1584,7 +1576,6 @@ order: X;`,
         chapter: 6,
         level: 3,
         blocks: ["water", "dunes", "water", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template: 1fr 20% / 1fr 1fr 1fr 1fr;
@@ -1595,7 +1586,6 @@ order: X;`,
         chapter: 6,
         level: 4,
         blocks: ["rocky", "water", "water", "water", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-gap: 5%;
@@ -1613,7 +1603,6 @@ rocky {
         chapter: 6,
         level: 5,
         blocks: ["water", "dunes", "water", "water", "water", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template: 
@@ -1630,7 +1619,6 @@ dunes {
         chapter: 6,
         level: 6,
         blocks: ["water", "rocky", "water", "water", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template: 
@@ -1659,7 +1647,6 @@ rocky {
           "water",
           "water",
         ],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template:
@@ -1678,13 +1665,9 @@ rocky {
         chapter: 6,
         level: 8,
         blocks: ["water", "dunes", "water", "water", "water", "water", "dunes"],
-        blocksContent: [],
-        css: `/* ROW POSITIONING gives the cell a FAST PASS in POSITIONING */
-/* those cells are placed first */
-/* and then the fill process starts from the beginning */
-/* remember: grid-area IS row positioning */
-
-planet {
+        notes:
+          "ROW POSITIONING gives the cell a FAST PASS in POSITIONING, those cells are placed first and then the fill process starts from the beginning remember: grid-area IS row positioning",
+        css: `planet {
   display: grid;
   grid-template:
     1fr
@@ -1702,11 +1685,9 @@ dunes {
         chapter: 6,
         level: 9,
         blocks: ["water", "water", "rocky", "water", "water", "dunes"],
-        blocksContent: [],
-        css: `/* row-positioned items are still given first place priority */
-/* regardless of the order values */
-
-planet {
+        notes:
+          "row-positioned items are still given first place priority, regardless of the order values",
+        css: `planet {
   display: grid;
   grid-template: 
     1fr
@@ -1738,11 +1719,9 @@ dunes {
           "water",
           "water",
         ],
-        blocksContent: [],
-        css: `/* fill up the grid with columns instead of rows (default) */
-/* and then column placement has fast pass priority */
-
-planet {
+        notes:
+          "fill up the grid with columns instead of rows (default), and then column placement has fast pass priority",
+        css: `planet {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -1767,11 +1746,9 @@ dunes {
           "water",
           "water",
         ],
-        blocksContent: [],
-        css: `/* if the grid goes back to previous empty cells or not */
-/* grid-auto-flow: row (default) / column sparse (default) / dense */
-
-planet {
+        notes:
+          "if the grid goes back to previous empty cells or not, grid-auto-flow: row (default) / column sparse (default) / dense",
+        css: `planet {
   display: grid;
   grid-template: 100px
                  1fr
@@ -1818,7 +1795,6 @@ rocky {
         chapter: 6,
         level: 14,
         blocks: ["rocky", "water", "water", "dunes", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template:
@@ -1849,7 +1825,6 @@ rocky {
           "water",
           "water",
         ],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
@@ -1867,7 +1842,6 @@ rocky {
         chapter: 6,
         level: 16,
         blocks: ["water", "water", "dunes", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1896,7 +1870,6 @@ water {
           "water",
           "water",
         ],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1912,7 +1885,6 @@ dunes {
         chapter: 6,
         level: 18,
         blocks: ["water", "rocky", "dunes", "water", "water", "water", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-gap: 50px;
@@ -1940,7 +1912,6 @@ dunes {
         chapter: 6,
         level: 19,
         blocks: ["dunes", "rocky", "grass", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -2003,10 +1974,8 @@ grid-auto-rows: X;`,
         chapter: 7,
         level: 3,
         blocks: ["rocky"],
-        blocksContent: [],
-        css: `/* the grid will implicitly make extra tracks */
-
-planet {
+        notes: "the grid will implicitly make extra tracks",
+        css: `planet {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -2021,7 +1990,6 @@ rocky {
         chapter: 7,
         level: 4,
         blocks: ["water", "water", "water", "water", "dunes", "dunes"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2035,9 +2003,8 @@ rocky {
         level: 5,
         blocks: ["water", "water", "dunes"],
         blocksContent: ["", "", "AAAA"],
-        css: `/* implicit tracks are auto size by default */
-
-planet {
+        notes: "implicit tracks are auto size by default",
+        css: `planet {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
@@ -2051,10 +2018,8 @@ dunes {
         chapter: 7,
         level: 6,
         blocks: ["rocky"],
-        blocksContent: [],
-        css: `/* grid-auto-columns specifies the width of auto created columns */
-
-planet {
+        notes: "grid-auto-columns specifies the width of auto created columns",
+        css: `planet {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
@@ -2078,10 +2043,8 @@ rocky {
           "dunes",
           "water",
         ],
-        blocksContent: [],
-        css: `/* grid-auto-rows specifies the height of auto created rows */
-
-planet {
+        notes: "grid-auto-rows specifies the height of auto created rows",
+        css: `planet {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -2094,7 +2057,6 @@ planet {
         chapter: 7,
         level: 9,
         blocks: ["dunes", "grass", "grass", "rocky"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
@@ -2106,7 +2068,6 @@ planet {
         chapter: 7,
         level: 10,
         blocks: ["dunes", "grass"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 1fr;
@@ -2135,7 +2096,6 @@ grass {
           "dunes",
           "rocky",
         ],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(4, 100px);
@@ -2171,13 +2131,9 @@ dunes {
         chapter: 7,
         level: 13,
         blocks: ["dunes", "grass"],
-        blocksContent: [],
-        css: `/* tracks created by repeat() are explicit */
-/* so grid-auto-columns / grid-auto-rows doesn't do anything */
-/* auto-fill / auto-fit create explicit tracks */
-/* grid-auto-columns / grid-auto-rows control implicit track size */
-
-planet {
+        notes:
+          "tracks created by repeat() are explicit, so grid-auto-columns / grid-auto-rows doesn't do anything, auto-fill / auto-fit create explicit tracks, grid-auto-columns / grid-auto-rows control implicit track size",
+        css: `planet {
   display: grid;
   grid-row-gap: 5%;
   grid-template-columns: 1fr;
@@ -2197,7 +2153,6 @@ planet {
           "water",
           "water",
         ],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2225,7 +2180,6 @@ rocky {
           "dunes",
           "dunes",
         ],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 200px 1fr 200px;
@@ -2256,7 +2210,6 @@ cell {
         chapter: 8,
         level: 3,
         blocks: ["rocky", "dunes", "grass", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template: 
@@ -2276,7 +2229,6 @@ terrain {
         chapter: 8,
         level: 4,
         blocks: ["dunes", "rocky", "dunes", "water", "dunes", "dunes"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template: 
@@ -2304,7 +2256,6 @@ terrain {
         chapter: 8,
         level: 5,
         blocks: ["dunes", "rocky", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 3fr 1fr 3fr;
@@ -2325,7 +2276,6 @@ water {
         chapter: 8,
         level: 6,
         blocks: ["water", "water", "dunes", "water", "water", "rocky"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 200px 1fr 3fr;
@@ -2370,7 +2320,6 @@ water {
         chapter: 8,
         level: 9,
         blocks: ["water", "dunes", "rocky", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -2400,7 +2349,6 @@ water {
         chapter: 8,
         level: 10,
         blocks: ["rocky", "rocky", "rocky", "water", "water", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2425,7 +2373,6 @@ water {
         chapter: 8,
         level: 11,
         blocks: ["dunes", "rocky", "rocky", "dunes"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2449,7 +2396,6 @@ dunes {
         chapter: 8,
         level: 12,
         blocks: ["rocky", "grass", "water", "dunes"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 1fr;
@@ -2470,7 +2416,6 @@ terrain {
         chapter: 8,
         level: 13,
         blocks: ["water", "rocky", "rocky", "dunes", "water", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -2507,7 +2452,6 @@ water {
           "water",
           "dunes",
         ],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 1fr repeat(2, 150px) 1fr;
@@ -2534,7 +2478,6 @@ water {
         chapter: 8,
         level: 15,
         blocks: ["water", "rocky", "dunes", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(2, 2fr) 1fr;
@@ -2599,7 +2542,6 @@ rocky {
         chapter: 8,
         level: 17,
         blocks: ["grass", "dunes", "rocky"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2634,7 +2576,6 @@ rocky {
         chapter: 8,
         level: 18,
         blocks: ["water", "dunes", "dunes", "rocky", "rocky", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -2670,7 +2611,6 @@ align-content: X;`,
         chapter: 9,
         level: 3,
         blocks: ["water", "rocky", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 75px 200px 75px;
@@ -2682,7 +2622,6 @@ align-content: X;`,
         chapter: 9,
         level: 4,
         blocks: ["dunes", "rocky", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-rows: 1fr;
@@ -2694,7 +2633,6 @@ align-content: X;`,
         chapter: 9,
         level: 5,
         blocks: ["dunes", "water", "rocky"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 150px 75px 150px;
@@ -2706,7 +2644,6 @@ align-content: X;`,
         chapter: 9,
         level: 6,
         blocks: ["dunes", "grass", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 10vw 100px 10vw;
@@ -2719,10 +2656,9 @@ align-content: X;`,
         level: 7,
         blocks: ["dunes", "rocky", "water"],
         blocksContent: ["AB", "", "BABBA"],
-        css: `/* justify-content: stretch changes the size of any auto column until the grid has been completely filled */
-/* the amount the auto column expands is based on the original content */
-
-planet {
+        notes:
+          "justify-content: stretch changes the size of any auto column until the grid has been completely filled, the amount the auto column expands is based on the original content",
+        css: `planet {
   display: grid;
   grid-template-columns: auto 100px auto;
   grid-template-rows: 1fr;
@@ -2734,11 +2670,9 @@ planet {
         chapter: 9,
         level: 8,
         blocks: ["water", "rocky", "grass"],
-        blocksContent: [],
-        css: `/* gaps are calculated BEFORE spaces */
-/* gap takes AWAY from the available space that justify-contnet gets to split */
-
-planet {
+        notes:
+          "gaps are calculated BEFORE spaces, gap takes AWAY from the available space that justify-contnet gets to split",
+        css: `planet {
   display: grid;
   grid-template-columns: 25% 25% 25%;
   grid-template-rows: 1fr;
@@ -2750,7 +2684,6 @@ planet {
         chapter: 9,
         level: 9,
         blocks: ["grass", "dunes", "water", "rocky"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2762,7 +2695,6 @@ planet {
         chapter: 9,
         level: 11,
         blocks: ["water", "rocky", "dunes", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(2, 150px);
@@ -2775,7 +2707,6 @@ planet {
         chapter: 9,
         level: 12,
         blocks: ["water", "rocky", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 50px minmax(50px, auto) 200px;
@@ -2789,10 +2720,9 @@ planet {
         level: 13,
         blocks: ["dunes", "water", "water", "dunes"],
         blocksContent: ["AAA", "AAA", "BBBBBB", "BBBBBB"],
-        css: `/* the content settings control the position of the tracks themselves */
-/* the item settings control the position of the things in the grid items when they don't take up the the full space of the grid cell */        
-
-planet {
+        notes:
+          "the content settings control the position of the tracks themselves, the item settings control the position of the things in the grid items when they don't take up the the full space of the grid cell",
+        css: `planet {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: 50% auto;
@@ -2818,7 +2748,6 @@ planet {
           "rocky",
           "grass",
         ],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 100px 30% 100px 100px;
@@ -2841,7 +2770,6 @@ dunes {
         chapter: 9,
         level: 15,
         blocks: ["rocky", "water", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 10% 10%;
@@ -2861,7 +2789,6 @@ rocky {
         chapter: 9,
         level: 16,
         blocks: ["dunes", "rocky"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 40% 20%;
@@ -2876,7 +2803,6 @@ rocky {
         chapter: 9,
         level: 17,
         blocks: ["rocky", "dunes", "grass", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 10vw 20vw 10vw;
@@ -2909,7 +2835,6 @@ water {
         chapter: 9,
         level: 18,
         blocks: ["water", "dunes", "rocky"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 20% 40% 10%;
@@ -2932,13 +2857,12 @@ dunes {
   {
     chapter: 10,
     concepts: "review, grid shorthand",
-    conceptsCode: ``,
+    conceptsCode: `grid: (flow) X / (flow) X;`,
     levelData: [
       {
         chapter: 10,
         level: 3,
         blocks: ["rocky"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: repeat(4, 1fr 10%);
@@ -2949,7 +2873,6 @@ dunes {
         chapter: 10,
         level: 4,
         blocks: ["rocky", "water", "dunes", "grass"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2961,7 +2884,6 @@ dunes {
         chapter: 10,
         level: 5,
         blocks: ["rocky", "water", "water", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 1fr 30% 1fr;
@@ -2982,7 +2904,6 @@ water {
         chapter: 10,
         level: 6,
         blocks: ["water", "dunes"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 20% 1fr 1fr 20%;
@@ -3001,7 +2922,6 @@ dunes {
         chapter: 10,
         level: 7,
         blocks: ["dunes", "grass", "water", "rocky"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template-columns: 2fr 3fr 1fr;
@@ -3034,7 +2954,6 @@ water {
         chapter: 10,
         level: 8,
         blocks: ["rocky", "water", "dunes"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid-template:
@@ -3082,10 +3001,9 @@ water {
         chapter: 10,
         level: 10,
         blocks: ["water", "water", "water", "rocky", "dunes"],
-        blocksContent: [],
-        css: `/* grid shorthand : configure row properties then / then configure column properties */
-
-planet {
+        notes:
+          "grid shorthand : configure row properties then / then configure column properties",
+        css: `planet {
   display: grid;
   grid:
     25%
@@ -3104,11 +3022,9 @@ rocky {
         chapter: 10,
         level: 11,
         blocks: ["water", "rocky", "dunes", "water"],
-        blocksContent: [],
-        css: `/* grid shorthand can define explicit OR implicit but not both */
-/* grid shorthand can also define auto-flow on both rows or columns */
-
-planet {
+        notes:
+          "grid shorthand can define explicit OR implicit but not both, grid shorthand can also define auto-flow on both rows or columns",
+        css: `planet {
   display: grid;
   grid: 
     1fr 
@@ -3130,7 +3046,6 @@ rocky {
         chapter: 10,
         level: 12,
         blocks: ["grass", "rocky", "dunes", "water", "water", "water", "water"],
-        blocksContent: [],
         css: `planet {
   display: grid;
   grid: 

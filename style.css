@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @font-face {
@@ -8,14 +10,6 @@
 @font-face {
   font-family: "Cascadia Code";
   src: url("./fonts/CascadiaCode.woff2");
-}
-
-:root {
-  --blue01: #27135b;
-  --blue02: #132468;
-  --purple01: #27135b;
-  --purple02: #190a47;
-  --pink01: #a6368e;
 }
 
 * {
@@ -40,28 +34,22 @@ body {
 }
 
 header {
-  position: sticky;
-  top: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 0.5rem 1.5rem 0.5rem 1rem;
-  text-align: center;
-  background: linear-gradient(
-    to right,
-    hsla(260, 57%, 10%, 0.85),
-    hsla(260, 57%, 25%, 0.85),
-    hsla(260, 57%, 10%, 0.85)
-  );
+  gap: 1rem;
+  padding: 0.5rem;
+  background-color: hsla(0, 0%, 0%, 0.5);
   border-bottom: 2px solid #1d20a3;
 }
 
-#header-heading {
-  /* placeholder */
+#header-image {
+  display: block;
+  width: 50px;
 }
 
-#header-heading-link {
-  text-decoration: none;
+#header-heading {
+  text-align: center;
   font-size: 2.2rem;
   font-weight: 500;
   color: #47ccdf;
@@ -69,162 +57,81 @@ header {
   font-family: "Audiowide", sans-serif;
 }
 
-#header-heading-link:hover {
-  color: hsl(313, 51%, 53%);
-  text-shadow: 0 0 0.4rem hsl(313, 51%, 33%);
-  transition: ease-in 0.2s;
+main {
+  display: grid;
+  grid-template-columns: min-content;
+  justify-content: center;
+  padding: 1rem;
 }
 
-#header-navigation {
-  position: relative;
-}
-
-#header-navigation-button {
-  font-size: 2rem;
+button {
+  cursor: pointer;
   background-color: transparent;
   border: none;
   cursor: pointer;
-  transform: scaleX(150%);
   transition: ease 0.5s;
+}
+
+button span {
   color: #47ccdf;
   text-shadow: 0 0 0.4rem #30d4cc;
 }
 
-#header-navigation-button:hover {
+button span:hover {
   color: hsl(313, 51%, 53%);
   text-shadow: 0 0 0.4rem hsl(313, 51%, 33%);
   transition: ease-in 0.2s;
 }
 
-#header-navigation-list {
-  position: absolute;
-  right: 0;
-  display: none;
-  list-style: none;
-  border: 2px solid #1d20a3;
-}
-
-#header-navigation-list.show-menu {
-  display: flex;
-  flex-direction: column;
+#container {
+  display: grid;
+  grid-template-rows: min-content min-content;
+  row-gap: 2rem;
   padding: 1rem;
-  gap: 1rem;
-  background-color: hsla(0, 0%, 0%, 0.8);
-}
-
-.header-navigation-list-item {
-  white-space: nowrap;
-}
-
-.header-navigation-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.header-navigation-link:hover {
-  color: #47ccdf;
-  transition: ease-in 0.5s;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0 1rem;
-}
-
-.chapter-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
   border-radius: 0.5rem;
-}
-
-.chapter-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem;
   background-color: hsla(0, 0%, 0%, 0.4);
   box-shadow: 0 0 0.2rem #30d4cc;
-  border-radius: 0.5rem;
 }
 
-.chapter-details h2 {
+#chapter-container {
+  display: grid;
+  row-gap: 0.5rem;
+}
+
+#chapter-bar,
+#level-bar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: hsla(270, 100%, 35%, 0.25);
+}
+
+#chapter-bar h2,
+#level-bar h3 {
+  text-align: center;
+}
+
+#chapter-heading {
   font-size: 1.8rem;
   font-weight: 500;
   font-family: "Audiowide", sans-serif;
   color: #47ccdf;
   text-shadow: 0 0 0.4rem #30d4cc;
-  border-bottom: 0.1rem solid #6b1d5d;
 }
 
-.chapter-details h4 {
-  font-size: 1.1rem;
-  font-weight: 400;
-}
-
-.chapter-details p {
-  font-size: 1.1rem;
-}
-
-.chapter-buttons-container {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.chapter-buttons-container button {
-  background-color: inherit;
-  color: inherit;
-  border: none;
-  padding: 0.25rem;
-  box-shadow: 0 0 0.2rem #872e82;
-  color: #47ccdf;
-  cursor: pointer;
-  border-radius: 0.25rem;
-}
-
-.chapter-buttons-container button:hover {
-  box-shadow: 0 0 0.2rem #30d4cc;
-  color: #872e82;
-}
-
-.levels-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.level-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
-  background-color: hsla(0, 0%, 0%, 0.4);
-  box-shadow: 0 0 0.2rem #0d68ab;
-  border-radius: 0.5rem;
-}
-
-.level-container h3 {
-  color: #47ccdf;
-  text-shadow: 0 0 0.4rem #30d4cc;
-  border-bottom: 0.1rem solid #6b1d5d;
-  font-size: 1.3rem;
-  font-weight: 500;
-  font-family: "Audiowide", sans-serif;
-}
-
-pre {
+#chapter-concepts {
   padding: 0.5rem;
-  display: inline-block;
+  border-radius: 0.5rem;
+  background-color: hsla(0, 0%, 0%, 0.35);
+}
+
+#chapter-concepts-code,
+#level-code {
+  display: block;
+  padding: 0.5rem 1rem;
   background-color: hsla(0, 0%, 10%, 0.7);
   border-radius: 0.5rem;
-}
-
-code {
-  display: inline-block;
   color: hsl(140, 100%, 60%);
   font-family: "Cascadia Code", monospace;
   line-height: 1.5;
@@ -232,15 +139,34 @@ code {
   user-select: text;
 }
 
-.terrain-order-container {
+#level-container {
+  display: grid;
+  row-gap: 0.5rem;
+}
+
+#level-heading {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: "Audiowide", sans-serif;
+  color: #47ccdf;
+  text-shadow: 0 0 0.4rem #30d4cc;
+}
+
+#level-cells-container {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: hsla(0, 0%, 0%, 0.25);
+}
+
+#level-cells {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  background-color: #0d0a29;
-  padding: 0.5rem;
 }
 
-.terrain-small {
+.cell-small {
   width: 1.5rem;
   height: 1.5rem;
   border: 1px solid black;
@@ -265,19 +191,14 @@ code {
   background-image: url("images/water-border.jpg"), url("images/water.jpg");
 }
 
-.planet-container {
+#level-planet {
   width: 500px;
   height: 500px;
   background-color: hsl(246, 61%, 20%);
   border: 0.5rem solid hsl(246, 61%, 10%);
 }
 
-.planet {
-  width: 100%;
-  height: 100%;
-}
-
-.terrain {
+.cell {
   min-width: 1.5rem;
   min-height: 1.5rem;
   border: 1px solid black;

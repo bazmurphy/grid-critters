@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@font-face {
+  font-family: "Audiowide";
+  src: url("./fonts/Audiowide.woff2");
+}
+
+@font-face {
+  font-family: "Cascadia Code";
+  src: url("./fonts/CascadiaCode.woff2");
+}
+
+.material-symbols-rounded {
+  font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" 48;
+}
+
+:root {
+  --blue01: #27135b;
+  --blue02: #132468;
+  --purple01: #27135b;
+  --purple02: #190a47;
+  --pink01: #a6368e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: "Inter", sans-serif;
+  color: hsl(0, 0%, 90%);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background-image: url("images/space-backdrop.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  user-select: none;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.5rem 0.5rem 1rem;
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    hsla(260, 57%, 10%, 0.85),
+    hsla(260, 57%, 25%, 0.85),
+    hsla(260, 57%, 10%, 0.85)
+  );
+  border-bottom: 2px solid #1d20a3;
+}
+
+#header-heading {
+  /* placeholder */
+}
+
+#header-heading-link {
+  text-decoration: none;
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #47ccdf;
+  text-shadow: 0 0 0.4rem #30d4cc;
+  font-family: "Audiowide", sans-serif;
+}
+
+#header-heading-link:hover {
+  color: hsl(313, 51%, 53%);
+  text-shadow: 0 0 0.4rem hsl(313, 51%, 33%);
+  transition: ease-in 0.2s;
+}
+
+#header-navigation {
+  position: relative;
+}
+
+#header-navigation-button {
+  font-size: 2rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transform: scaleX(150%);
+  transition: ease 0.5s;
+  color: #47ccdf;
+  text-shadow: 0 0 0.4rem #30d4cc;
+}
+
+#header-navigation-button:hover {
+  color: hsl(313, 51%, 53%);
+  text-shadow: 0 0 0.4rem hsl(313, 51%, 33%);
+  transition: ease-in 0.2s;
+}
+
+#header-navigation-list {
+  position: absolute;
+  right: 0;
+  display: none;
+  list-style: none;
+  border: 2px solid #1d20a3;
+}
+
+#header-navigation-list.show-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  background-color: hsla(0, 0%, 0%, 0.8);
+}
+
+.header-navigation-list-item {
+  white-space: nowrap;
+}
+
+.header-navigation-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header-navigation-link:hover {
+  color: #47ccdf;
+  transition: ease-in 0.5s;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.chapter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+}
+
+.chapter-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: hsla(0, 0%, 0%, 0.4);
+  box-shadow: 0 0 0.2rem #30d4cc;
+  border-radius: 0.5rem;
+}
+
+.chapter-details h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  font-family: "Audiowide", sans-serif;
+  color: #47ccdf;
+  text-shadow: 0 0 0.4rem #30d4cc;
+  border-bottom: 0.1rem solid #6b1d5d;
+}
+
+.chapter-details h4 {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.chapter-details p {
+  font-size: 1.1rem;
+}
+
+.chapter-buttons-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chapter-button-previous,
+.chapter-button-next {
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  padding: 0.25rem;
+  box-shadow: 0 0 0.2rem #872e82;
+  color: #47ccdf;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.chapter-button-previous:hover,
+.chapter-button-next:hover {
+  box-shadow: 0 0 0.2rem #30d4cc;
+  color: #872e82;
+}
+
+.levels-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.level-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: hsla(0, 0%, 0%, 0.4);
+  box-shadow: 0 0 0.2rem #0d68ab;
+  border-radius: 0.5rem;
+}
+
+.level-container h3 {
+  color: #47ccdf;
+  text-shadow: 0 0 0.4rem #30d4cc;
+  border-bottom: 0.1rem solid #6b1d5d;
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: "Audiowide", sans-serif;
+}
+
+.level-notes {
+  max-width: 500px;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: hsla(246, 61%, 10%, 0.75);
+}
+
+pre {
+  padding: 0.5rem;
+  display: inline-block;
+  background-color: hsla(0, 0%, 10%, 0.7);
+  border-radius: 0.5rem;
+}
+
+code {
+  display: inline-block;
+  color: hsl(140, 100%, 60%);
+  font-family: "Cascadia Code", monospace;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  user-select: text;
+}
+
+.terrain-order-container {
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: hsla(246, 61%, 10%, 0.75);
+}
+
+.terrain-order-label {
+  font-family: "Audiowide", sans-serif;
+  color: #47ccdf;
+  text-shadow: 0 0 0.4rem #30d4cc;
+}
+
+.terrain-small {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid black;
+  background-position: center bottom, center top;
+  background-repeat: repeat-x, no-repeat;
+  background-size: auto 0.25rem, cover;
+}
+
+.dunes-small {
+  background-image: url("images/dunes-border.jpg"), url("images/dunes.jpg");
+}
+
+.rocky-small {
+  background-image: url("images/rocky-border.jpg"), url("images/rocky.jpg");
+}
+
+.grass-small {
+  background-image: url("images/grass-border.jpg"), url("images/grass.jpg");
+}
+
+.water-small {
+  background-image: url("images/water-border.jpg"), url("images/water.jpg");
+}
+
+.planet-container {
+  transform: scale(75%);
+  width: 500px;
+  height: 500px;
+  background-color: hsl(246, 61%, 20%);
+  border: 0.5rem solid hsl(246, 61%, 10%);
+}
+
+.planet {
+  width: 100%;
+  height: 100%;
+}
+
+.terrain {
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  border: 1px solid black;
+  background-position: center bottom, center top;
+  background-repeat: repeat-x, no-repeat;
+  background-size: auto 10px, cover;
+  font-size: 2rem;
+  font-family: sans-serif;
+  overflow-wrap: break-word;
+}
+
+.dunes {
+  background-image: url("images/dunes-border.jpg"), url("images/dunes.jpg");
+  color: white;
+}
+
+.rocky {
+  background-image: url("images/rocky-border.jpg"), url("images/rocky.jpg");
+  color: black;
+}
+
+.grass {
+  background-image: url("images/grass-border.jpg"), url("images/grass.jpg");
+  color: white;
+}
+
+.water {
+  background-image: url("images/water-border.jpg"), url("images/water.jpg");
+  color: black;
+}

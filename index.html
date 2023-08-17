@@ -8,5 +8,45 @@
     <script src="script.js" type="module" defer></script>
     <title>Grid Critters Solutions</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <img src="./images/chat-ai.png" alt="AI Robot Face" id="header-image" />
+      <h1 id="header-heading">Grid Critters Solutions</h1>
+    </header>
+    <main>
+      <div id="container">
+        <div id="chapter-container">
+          <div id="chapter-bar">
+            <button id="chapter-button-previous">
+              <span class="material-symbols-rounded">arrow_back_ios</span>
+            </button>
+            <h2 id="chapter-heading"></h2>
+            <button id="chapter-button-next">
+              <span class="material-symbols-rounded">arrow_forward_ios</span>
+            </button>
+          </div>
+          <p id="chapter-concepts"></p>
+          <pre><code id="chapter-concepts-code"></code></pre>
+        </div>
+        <div id="level-container">
+          <div id="level-bar">
+            <button id="level-button-previous">
+              <span class="material-symbols-rounded">arrow_back_ios</span>
+            </button>
+            <h3 id="level-heading"></h3>
+            <button id="level-button-next">
+              <span class="material-symbols-rounded">arrow_forward_ios</span>
+            </button>
+          </div>
+          <p id="level-notes"></p>
+          <pre><code id="level-code"></code></pre>
+          <div id="level-cells-container">
+            <p>cells:</p>
+            <div id="level-cells"></div>
+          </div>
+          <div id="level-planet"></div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
