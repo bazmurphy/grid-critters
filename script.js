@@ -52,6 +52,8 @@ headerNavigationButton.addEventListener("click", () => {
 const main = document.createElement("main");
 document.body.appendChild(main);
 
+let count = 1;
+
 chapterData.forEach((chapter) => {
   const headerNavigationListItem = document.createElement("li");
   headerNavigationListItem.className = "header-navigation-list-item";
@@ -142,7 +144,10 @@ chapterData.forEach((chapter) => {
 
     // <h3>Chapter 1 Level 3</h3>;
     const levelHeading = document.createElement("h3");
-    levelHeading.textContent = `Chapter ${level.chapter} Level ${level.level}`;
+    levelHeading.textContent = `[${count
+      .toString()
+      .padStart(3, "0")}] Chapter ${level.chapter} Level ${level.level}`;
+    count++;
     levelContainer.appendChild(levelHeading);
 
     // <pre><code>planet { display: grid; }</code></pre>

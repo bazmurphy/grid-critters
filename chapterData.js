@@ -2929,6 +2929,234 @@ dunes {
       },
     ],
   },
+  {
+    chapter: 10,
+    concepts: "review, grid shorthand",
+    conceptsCode: ``,
+    levelData: [
+      {
+        chapter: 10,
+        level: 3,
+        blocks: ["rocky"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr 10%);
+  grid-template-rows: repeat(3, 1fr 2fr);
+}`,
+      },
+      {
+        chapter: 10,
+        level: 4,
+        blocks: ["rocky", "water", "dunes", "grass"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30% 10%;
+}`,
+      },
+      {
+        chapter: 10,
+        level: 5,
+        blocks: ["rocky", "water", "water", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 1fr 30% 1fr;
+  grid-template-rows: 1fr 30% 1fr;
+  gap: 50px;
+}
+
+rocky {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+water {
+  grid-row: 3;
+}`,
+      },
+      {
+        chapter: 10,
+        level: 6,
+        blocks: ["water", "dunes"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 20% 1fr 1fr 20%;
+  grid-template-rows: 20% 1fr 1fr 20%;
+}
+
+water {
+  grid-area: 1 / 1 / 3 / 4;
+}
+
+dunes {
+  grid-area: 3 / 2 / 5 / 5;
+}`,
+      },
+      {
+        chapter: 10,
+        level: 7,
+        blocks: ["dunes", "grass", "water", "rocky"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-areas: 
+    "dunes dunes water"
+    "grass . water"
+    "grass rocky rocky";
+  column-gap: 40px;
+  row-gap: 80px;
+}
+
+dunes {
+  grid-area: dunes;
+}
+
+grass {
+  grid-area: grass;
+}
+
+rocky {
+  grid-area: rocky;
+}
+
+water {
+  grid-area: water;
+}`,
+      },
+      {
+        chapter: 10,
+        level: 8,
+        blocks: ["rocky", "water", "dunes"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template:
+    40%
+    1fr
+    40%
+    / 1fr 1fr 1fr;
+  column-gap: 10vw;
+}
+
+water {
+  grid-area: 2 / 2 / 4 / 3;
+}
+
+rocky {
+  grid-area: 3 / 1 / 4 / 2; 
+}
+
+dunes {
+  grid-area: 1 / 3 / 4 / 4;
+}`,
+      },
+      {
+        chapter: 10,
+        level: 9,
+        blocks: ["dunes", "water", "dunes", "rocky", "rocky"],
+        blocksContent: ["AAAA", "BBBB", "AAAAAAAAAA"],
+        css: `planet {
+  display: grid;
+  grid-template:
+    auto
+    1fr
+    / auto minmax(auto, 1fr) auto;
+  column-gap: 5%;
+  row-gap: 10%;
+}
+
+water {
+  grid-area: 1 / 2 / 3 / 3;
+  justify-self: center;
+  align-self: end;
+}`,
+      },
+      {
+        chapter: 10,
+        level: 10,
+        blocks: ["water", "water", "water", "rocky", "dunes"],
+        blocksContent: [],
+        css: `/* grid shorthand : configure row properties then / then configure column properties */
+
+planet {
+  display: grid;
+  grid:
+    25%
+    25%
+    1fr
+    / 1fr 1fr 1fr;
+  gap: 20px;
+  grid-auto-flow: column;
+}
+
+rocky {
+  grid-area: 2 / 2 / 3 / 4;
+}`,
+      },
+      {
+        chapter: 10,
+        level: 11,
+        blocks: ["water", "rocky", "dunes", "water"],
+        blocksContent: [],
+        css: `/* grid shorthand can define explicit OR implicit but not both */
+/* grid shorthand can also define auto-flow on both rows or columns */
+
+planet {
+  display: grid;
+  grid: 
+    1fr 
+    / auto-flow 15%;
+  justify-content: space-between;
+}
+
+dunes {
+  height: 25%;
+  align-self: center;
+}
+
+rocky {
+  height: 50%;
+  align-self: end;
+}`,
+      },
+      {
+        chapter: 10,
+        level: 12,
+        blocks: ["grass", "rocky", "dunes", "water", "water", "water", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid: 
+    15% 
+    25% 
+    15% 
+    / 10% 10vw 10vw 10%;
+  gap: 30px;
+  justify-content: center;
+  align-content: end;
+}
+
+dunes {
+  grid-area: 2 / 3 / 3 / 5;
+}
+
+rocky {
+  grid-area: 3 / 1 / 4 / 5;
+}
+
+grass {
+  grid-area: 1 / 1 / 2 / 3;
+}}`,
+      },
+    ],
+  },
 ];
 
 export default chapterData;
