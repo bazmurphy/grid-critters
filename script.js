@@ -9,7 +9,7 @@ headerHeading.id = "header-heading";
 
 const headerHeadingLink = document.createElement("a");
 headerHeadingLink.id = "header-heading-link";
-headerHeadingLink.textContent = "Grid Critters";
+headerHeadingLink.textContent = "Grid Critters Solutions";
 headerHeadingLink.href = "#";
 headerHeadingLink.addEventListener("click", (event) => {
   event.preventDefault();
@@ -205,7 +205,6 @@ chapterData.forEach((chapter) => {
       }
 
       if (parsedCssRules["terrain"]) {
-        console.log(parsedCssRules["terrain"]);
         style += parsedCssRules["terrain"];
       }
 

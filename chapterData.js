@@ -1,3 +1,4 @@
+// this data was hand coded by github.com/bazmurphy
 const chapterData = [
   {
     chapter: 1,
@@ -2655,6 +2656,275 @@ rocky {
 
 water {
   grid-column: span 2;
+}`,
+      },
+    ],
+  },
+  {
+    chapter: 9,
+    concepts: "justify-content, align-content",
+    conceptsCode: `justify-content: X;
+align-content: X;`,
+    levelData: [
+      {
+        chapter: 9,
+        level: 3,
+        blocks: ["water", "rocky", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 75px 200px 75px;
+  grid-template-rows: 1fr;
+  justify-content: center;
+}`,
+      },
+      {
+        chapter: 9,
+        level: 4,
+        blocks: ["dunes", "rocky", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 100px);
+  justify-content: space-between;
+}`,
+      },
+      {
+        chapter: 9,
+        level: 5,
+        blocks: ["dunes", "water", "rocky"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 150px 75px 150px;
+  grid-template-rows: 1fr;
+  justify-content: space-evenly;
+}`,
+      },
+      {
+        chapter: 9,
+        level: 6,
+        blocks: ["dunes", "grass", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 10vw 100px 10vw;
+  grid-template-rows: 1fr;
+  justify-content: space-around;
+}`,
+      },
+      {
+        chapter: 9,
+        level: 7,
+        blocks: ["dunes", "rocky", "water"],
+        blocksContent: ["AB", "", "BABBA"],
+        css: `/* justify-content: stretch changes the size of any auto column until the grid has been completely filled */
+/* the amount the auto column expands is based on the original content */
+
+planet {
+  display: grid;
+  grid-template-columns: auto 100px auto;
+  grid-template-rows: 1fr;
+  justify-content: stretch;
+  column-gap: 30px;
+}`,
+      },
+      {
+        chapter: 9,
+        level: 8,
+        blocks: ["water", "rocky", "grass"],
+        blocksContent: [],
+        css: `/* gaps are calculated BEFORE spaces */
+/* gap takes AWAY from the available space that justify-contnet gets to split */
+
+planet {
+  display: grid;
+  grid-template-columns: 25% 25% 25%;
+  grid-template-rows: 1fr;
+  justify-content: space-around;
+  column-gap: 5%;
+}`,
+      },
+      {
+        chapter: 9,
+        level: 9,
+        blocks: ["grass", "dunes", "water", "rocky"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 100px;
+  align-content: center; 
+}`,
+      },
+      {
+        chapter: 9,
+        level: 11,
+        blocks: ["water", "rocky", "dunes", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  grid-template-rows: repeat(2, 150px);
+  justify-content: space-evenly;
+  align-content: space-evenly;
+}`,
+      },
+      {
+        chapter: 9,
+        level: 12,
+        blocks: ["water", "rocky", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 50px minmax(50px, auto) 200px;
+  grid-template-rows: max-content;
+  justify-content: center;
+  align-content: end;
+}`,
+      },
+      {
+        chapter: 9,
+        level: 13,
+        blocks: ["dunes", "water", "water", "dunes"],
+        blocksContent: ["AAA", "AAA", "BBBBBB", "BBBBBB"],
+        css: `/* the content settings control the position of the tracks themselves */
+/* the item settings control the position of the things in the grid items when they don't take up the the full space of the grid cell */        
+
+planet {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 50% auto;
+  justify-content: space-evenly;
+  align-content: space-between;
+  justify-items: end;
+}`,
+      },
+      {
+        chapter: 9,
+        level: 14,
+        blocks: [
+          "dunes",
+          "water",
+          "rocky",
+          "grass",
+          "grass",
+          "dunes",
+          "water",
+          "rocky",
+          "rocky",
+          "water",
+          "rocky",
+          "grass",
+        ],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 100px 30% 100px 100px;
+  grid-template-rows: 100px 100px 30%;
+  justify-content: space-around;
+  align-content: space-between;
+}
+
+rocky {
+  height: 50%;
+  align-self: end;
+}
+
+dunes {
+  width: 50%;
+  justify-self: center;
+}`,
+      },
+      {
+        chapter: 9,
+        level: 15,
+        blocks: ["rocky", "water", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 10% 10%;
+  grid-template-rows: 10% 10%;
+  grid-auto-columns: 10%;
+  grid-auto-rows: 10%;
+  justify-content: space-evenly;
+  align-content: space-around;
+}
+
+rocky {
+  grid-column: 3;
+  grid-row: 3;
+}`,
+      },
+      {
+        chapter: 9,
+        level: 16,
+        blocks: ["dunes", "rocky"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 40% 20%;
+  grid-template-rows: 40% 20%;
+  column-gap: 100px;
+  row-gap: 50px;
+  justify-content: end;
+  align-content: end;
+}`,
+      },
+      {
+        chapter: 9,
+        level: 17,
+        blocks: ["rocky", "dunes", "grass", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 10vw 20vw 10vw;
+  grid-template-rows: 10% 30% 10%;
+  grid-template-areas:
+    "dunes grass rocky"
+    ". grass rocky"
+    "water grass .";
+  justify-content: center;
+  align-content: space-around;
+}
+
+rocky {
+  grid-area: rocky;
+}
+
+grass {
+  grid-area: grass;
+}
+
+dunes {
+  grid-area: dunes;
+}
+
+water {
+  grid-area: water;
+}`,
+      },
+      {
+        chapter: 9,
+        level: 18,
+        blocks: ["water", "dunes", "rocky"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 20% 40% 10%;
+  grid-template-rows: 20% 40% 10%;
+  grid-auto-flow: dense;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+water {
+  grid-column: 2 / span 2;  
+}
+
+dunes {
+  grid-row: span 2;
 }`,
       },
     ],
