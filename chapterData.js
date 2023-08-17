@@ -2240,6 +2240,425 @@ dunes {
       },
     ],
   },
+  {
+    chapter: 8,
+    concepts: "justify-items, justify-self, align-items, align-self",
+    conceptsCode: `justify-items: X; (horizontal)
+align-items: X; (vertical)
+
+cell {
+  justify-self: X; (horizontal)
+  align-self: X; (vertical)
+}`,
+    levelData: [
+      {
+        chapter: 8,
+        level: 3,
+        blocks: ["rocky", "dunes", "grass", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template: 
+    1fr 
+    1fr 
+    / 1fr 1fr;
+  grid-gap: 50px;
+  justify-items: center;
+}
+
+terrain {
+  width: 50%;
+  height: 50%;
+}`,
+      },
+      {
+        chapter: 8,
+        level: 4,
+        blocks: ["dunes", "rocky", "dunes", "water", "dunes", "dunes"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template: 
+    1fr 
+    1fr
+    / 1fr 1fr 1fr;
+  grid-gap: 25px;
+  justify-items: center;
+}
+
+water {
+  justify-self: start;
+}
+
+rocky {
+  justify-self: end; 
+}
+
+terrain {
+  width: 50%;
+  height: 100%;
+}`,
+      },
+      {
+        chapter: 8,
+        level: 5,
+        blocks: ["dunes", "rocky", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 3fr 1fr 3fr;
+  grid-template-rows: 2fr 1fr;
+  align-items: end;
+}
+
+terrain {
+  height: 50%;
+}
+
+water {
+  grid-row: 2;
+  grid-column: 3;
+}`,
+      },
+      {
+        chapter: 8,
+        level: 6,
+        blocks: ["water", "water", "dunes", "water", "water", "rocky"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 200px 1fr 3fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: end;
+}
+
+terrain {
+  height: 50%;
+}
+
+dunes {
+  align-self: start;
+}
+
+rocky {
+  align-self: center;
+}`,
+      },
+      {
+        chapter: 8,
+        level: 7,
+        blocks: ["rocky", "dunes", "grass", "water", "water", "water"],
+        blocksContent: ["Abc", "A", "CCCC"],
+        css: `planet {
+  display: grid;
+  grid-template: 
+    1fr
+    / 1fr 1fr 1fr;
+  grid-gap: 20px;
+  grid-auto-rows: 200px;
+  justify-items: end;
+  align-items: center;
+}
+
+water {
+  justify-self: stretch;
+  align-self: stretch;
+}`,
+      },
+      {
+        chapter: 8,
+        level: 9,
+        blocks: ["water", "dunes", "rocky", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 2fr 1fr 2fr;
+  gap: 50px;
+}
+
+dunes {
+  height: 50%;
+  grid-column: 3 / 5;
+  grid-row: 1 / 3;
+  align-self: end;
+}
+
+rocky {
+  height: 50%;
+  grid-column: 1 / 3;
+  grid-row: 2 / 4;
+  align-self: top;
+}
+
+water {
+ grid-column: span 2; 
+}`,
+      },
+      {
+        chapter: 8,
+        level: 10,
+        blocks: ["rocky", "rocky", "rocky", "water", "water", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 2fr 1fr;
+}
+
+rocky {
+  width: 75px;
+  height: 125px;
+  justify-self: end;
+  align-self: end;
+}
+
+water {
+  width: 125px;
+  height: 75px;
+  justify-self: center;
+  align-self: start;
+}`,
+      },
+      {
+        chapter: 8,
+        level: 11,
+        blocks: ["dunes", "rocky", "rocky", "dunes"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+  grid-auto-flow: column;
+}
+
+rocky {
+  width: 50%;
+}
+
+dunes {
+  width: 50%;
+  height: 50%;
+  justify-self: end;
+  align-self: end;
+}`,
+      },
+      {
+        chapter: 8,
+        level: 12,
+        blocks: ["rocky", "grass", "water", "dunes"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-rows: 1fr;
+  justify-items: center;
+}
+
+water {
+  justify-self: end;
+}
+
+terrain {
+  width: 25%;
+}`,
+      },
+      {
+        chapter: 8,
+        level: 13,
+        blocks: ["water", "rocky", "rocky", "dunes", "water", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 30px;
+}
+
+dunes {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+rocky {
+  height: 50%;
+  align-self: end;
+}
+
+water {
+  width: 25%;
+  grid-column: span 2;
+  justify-self: center;
+}`,
+      },
+      {
+        chapter: 8,
+        level: 14,
+        blocks: [
+          "dunes",
+          "rocky",
+          "rocky",
+          "dunes",
+          "dunes",
+          "water",
+          "water",
+          "dunes",
+        ],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 150px) 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  column-gap: 30px;
+  row-gap: 5%;
+}
+
+terrain {
+  grid-row: span 2;
+}
+
+rocky {
+  width: 50%;
+  justify-self: end;
+}
+
+water {
+  height: 100px;
+  align-self: end;
+}`,
+      },
+      {
+        chapter: 8,
+        level: 15,
+        blocks: ["water", "rocky", "dunes", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr) 1fr;
+  grid-template-rows: 1fr 100px 1fr;
+  grid-auto-flow: dense;
+  gap: 20px;
+}
+
+water {
+  width: 50%;
+  grid-column: span 2;
+  justify-self: end;
+}
+
+rocky {
+  width: 50%;
+  grid-column: span 2;
+  justify-self: center;
+}
+
+dunes {
+  width: 50%;
+  height: 66%;
+  grid-row: span 3;
+  justify-self: center;
+  align-self: center;
+}`,
+      },
+      {
+        chapter: 8,
+        level: 16,
+        blocks: ["water", "dunes", "rocky"],
+        blocksContent: ["", "ABBABBAB"],
+        css: `planet {
+  display: grid;
+  grid-template-columns: 0.5fr minmax(auto, 1fr) 0.5fr;
+  grid-template-rows: 1fr;
+}
+
+dunes {
+  justify-self: center;
+  align-self: center;
+}
+
+water {
+  width: 40%;
+  height: 50%;
+  justify-self: start;
+  align-self: center;
+  order: 1;
+}
+
+rocky {
+  width: 40%;
+  height: 50%;
+  justify-self: end;
+  align-self: center;
+  order: -1;
+}`,
+      },
+      {
+        chapter: 8,
+        level: 17,
+        blocks: ["grass", "dunes", "rocky"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: 
+   "grass dunes dunes"
+   "grass dunes dunes"
+   "grass rocky rocky"
+   "grass rocky rocky";
+  column-gap: 10%;
+  row-gap: 5vh;
+}
+
+grass {
+  grid-area: grass;
+  width: 65%;
+  justify-self: end;
+}
+
+dunes {
+  grid-area: dunes;
+  height: 65%;
+  align-self: end;
+}
+
+rocky {
+  grid-area: rocky;
+  height: 65%;
+}`,
+      },
+      {
+        chapter: 8,
+        level: 18,
+        blocks: ["water", "dunes", "dunes", "rocky", "rocky", "water"],
+        blocksContent: [],
+        css: `planet {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 2fr 1fr 2fr;
+  gap: 20px;
+}
+
+dunes {
+  height: 50%;
+  grid-row: span 2;
+  align-self: end;
+}
+
+rocky {
+  height: 75%;
+  grid-row: span 2;
+  align-self: center;
+}
+
+water {
+  grid-column: span 2;
+}`,
+      },
+    ],
+  },
 ];
 
 export default chapterData;
